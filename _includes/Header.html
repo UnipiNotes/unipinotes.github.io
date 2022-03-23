@@ -1,0 +1,51 @@
+<nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img class="nav-img" src="/assets/img/logo.svg" alt="logo">
+      <h4 class="brand-name">Unipi Notes</h4>
+    </a>
+    <div class="navbar-item navbar-dark-mode__mobile is-hidden-tablet" onclick="modeSwitcher()">
+      <div class="buttons">
+        <a class="button is-text">
+          <span class="icon is-small">
+            <img src="../assets/img/sun.svg" id="theme-toggle-img--mobile">
+          </span>
+        </a>
+      </div>
+    </div>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a href="/"  class="navbar-item">
+        Home
+      </a>
+      <a href="/notes" class="navbar-item">
+        Notes
+      </a>
+      <a href="/blogs" class="navbar-item">
+        Blogs
+      </a>
+      <a href="https://github.com/unipi-projects/extras/blob/main/README.md" target="_blank" class="navbar-item">
+        Extra
+      </a>
+    </div>
+    <div class="navbar-end is-hidden-mobile" onclick="modeSwitcher()" >
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-text">
+            <span class="icon is-small">
+              <img src="../assets/img/sun.svg" id="theme-toggle-img">
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<script src="/assets/js/Hamburger.js"></script>

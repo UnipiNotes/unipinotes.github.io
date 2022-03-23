@@ -1,0 +1,32 @@
+.spacing > div + div{
+  margin-top: 6em;
+}
+
+.spacing1 div + div{
+  margin-top: 1.5em;
+}
+
+.spacing1 img + a{
+  margin-left: 0.6em;
+}
+
+
+.spacing-year > div + div{
+  margin-top: 2em;
+}
+
+.lefty{
+  padding-left: 1.3em;
+}
+
+.toppy h3 + div{
+  margin-top: 2em;
+}
+
+.toppy h4 + div{
+  margin-top: 2em;
+}
+
+.blogs{
+  background-color: darkblue;
+}

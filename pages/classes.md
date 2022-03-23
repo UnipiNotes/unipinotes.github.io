@@ -1,0 +1,4 @@
+---
+layout: class
+title: Classes
+---
