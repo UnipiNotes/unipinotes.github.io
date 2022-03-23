@@ -20,9 +20,9 @@
 
 <head>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta content="Digital Garden" property="og:site_name" />
+    <meta content="Unipi Notes" property="og:site_name" />
     <meta
-        content="A Jekyll theme for Obsidian users to build digital garden"
+        content="Notes for all the classes in Computer Science at University of Piraeus"
         property="og:description">
     <meta content="{{ site.url }}/about/" property="article:author">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -129,8 +129,19 @@
 <script src="{{base}}/assets/js/Hamburger.js"></script>
 <script src="{{base}}/assets/js/modeswitchernotes.js"></script>
 
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
-onload="renderMathInElement(document.body);"></script>
-
+{% if page.katex %}
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll("script[type='math/tex']").forEach(function(el){
+      el.outerHTML = "\\(" + el.textContent + "\\)";
+    });
+    document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el){
+      el.outerHTML = "\\[" + el.textContent + "\\]";
+    });
+    var script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js";
+    document.head.appendChild(script);
+  }, false);
+  </script>
+{% endif %}
 </body>
