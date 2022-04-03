@@ -32,15 +32,17 @@ sf: second-year/fourth-semester
 
 ## Websites
 
-### Installing Eclipse
+### Installing Eclipse (recommended)
 
-Για να κατεβάσει κάποιος το Eclipse πρέπει να πάει στο site του [Eclipse](https://netbeans.apache.org/download/index.html) και να κατεβάσει το **Eclipse IDE for Enterprise Java and Web Developers**.
-	
+Για να κατεβάσει κάποιος το Eclipse πρέπει να πάει στο site του [Eclipse](https://www.eclipse.org/downloads/packages/) και να κατεβάσει το **Eclipse IDE for Enterprise Java and Web Developers**.
+
 <br />
 
 ### Installing Netbeans
 
-Για να κατεβάσει κάποιος το Netbeans πρέπει να πάει στο site του [Netbeans](https://www.eclipse.org/downloads/packages/). Μόλις το κατεβάσετε πρέπει να το ανοίξετε και να βρήτε την κατηγορία **Plugins** και να κάνετε Install το plugin για Web Project και τέλος στη διπλανή κατηγορία **Activated** να το διαλέξετε και να το κάνετε Activate.
+Για να κατεβάσει κάποιος το Netbeans πρέπει να πάει στο site του [Netbeans](https://netbeans.apache.org/download/index.html). Μόλις το κατεβάσετε πρέπει να το ανοίξετε και να βρήτε την κατηγορία **Plugins** και να κάνετε Install το plugin για Web Project και τέλος στη διπλανή κατηγορία **Activated** να το διαλέξετε και να το κάνετε Activate.
+
+<br />
 
 ### Για τις εργασίες
 
@@ -53,4 +55,5 @@ sf: second-year/fourth-semester
 
 ### Για τις εργασίες
 
-[Servlet & JSP Tutorial \| Full Course](https://www.youtube.com/watch?v=OuBUUkQfBYM)
+[Servlet & JSP Tutorial | Full Course](https://www.youtube.com/watch?v=OuBUUkQfBYM)
+
