@@ -55,5 +55,5 @@ sf: second-year/fourth-semester
 
 ### Για τις εργασίες
 
-[Servlet & JSP Tutorial | Full Course](https://www.youtube.com/watch?v=OuBUUkQfBYM)
+[Servlet & JSP Tutorial \| Full Course](https://www.youtube.com/watch?v=OuBUUkQfBYM)
 
