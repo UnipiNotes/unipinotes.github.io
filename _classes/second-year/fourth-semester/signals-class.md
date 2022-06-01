@@ -24,9 +24,9 @@ $$x(t) = A cos(\Omega t + \theta)$$
 
 **$$\theta$$**: είναι η ακτίνα σε rads.
 
-Τα ημιτονοειδή σήματα είναι περιοδικά σήματα και η περίοδος $$\Tau$$ υπολογίζεται:
+Τα ημιτονοειδή σήματα είναι περιοδικά σήματα και η περίοδος $$ T $$ υπολογίζεται:
 
-$$\Tau = 2\pi / \Omega$$
+$$T = 2\pi / \Omega$$
 
 Παράδειγμα:
 
@@ -36,18 +36,18 @@ $$
 x(t) = cos(100\pi t) + cos(200\pi t) + sin(500\pi t)
 $$
 
-όταν $#t \isin [-10, 10]#$ και βήμα #$\Delta t = 0,001$#.
+όταν $$t \in [-10, 10]$$ και βήμα $$\Delta t = 0,001$$.
 
 
 ```matlab
-omega1=100*pi;
-omega2=200*pi;
-omega3=500*pi;
-t=-0.1:0.001:0.1;
-x=cos(omega1*t)+cos(omega2*t)+sin(omega3*t);
+omega1 = 100*pi;
+omega2 = 200*pi;
+omega3 = 500*pi;
+t = -0.1:0.001:0.1;
+x = cos(omega1*t) + cos(omega2*t) + sin(omega3*t);
 plot(t,x);
-xlabel ("time");
-ylabel ("x(t)");
+xlabel("time");
+ylabel("x(t)");
 ```
 
 Στην περίπτωση μας δεν χρειάζεται να υπολογίσουμε το $$A$$ και το $$\theta$$ καθώς $$A= 1 \ \theta = 0$$.
