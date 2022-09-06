@@ -351,9 +351,9 @@ grep -io "hello" test.txt | wc -w
 
 <br />
 
-## Εφαρμογή Εντολών
+## Λύσεις Εργαστηρίου - [2020](../../../assets/files/notes/operating-systems-lab/LinuxLabExams-Sep2020-Covid19-1.pdf)
 
-1. Είμαστε στο **Home** directory και χωρίς να μετακινηθούμε από αυτόν πρέπει να δημιουργήσουμε δύο *φακέλους* (test, other) καθώς και τα *αρχεία* (012, 021, 120, 102, 201, 210).
+Είμαστε στο **Home** directory και χωρίς να μετακινηθούμε από αυτόν πρέπει να δημιουργήσουμε δύο *φακέλους* (test, other) καθώς και τα *αρχεία* (012, 021, 120, 102, 201, 210).
 
 **Λύση**
 
@@ -364,103 +364,122 @@ mkdir test other && touch test/{012,021,120,102,201,210}.txt
 <br>
 
 <details style="cursor: pointer">
-	 <summary>Screenshots Here</summary>
-	 <br>
-	1. Το Home πριν να τρέξουμε το command.
-	 <img src="https://www.dropbox.com/s/onrazpenqdisij3/before_command.png?raw=1" alt="home directory before running the command above" width="100%"/>
+		<summary>&#10148; Screenshots Here</summary>
 
-    2. Το Home directory μας αφότου τρέξουμε το command.
-   <img src="https://www.dropbox.com/s/aq437j9xg03x5ua/home_after_command.png?raw=1" alt="home directory after running the command above " width="100%"/>
+		<br />
+			1. Το Home πριν να τρέξουμε το command.
+		<img src="https://www.dropbox.com/s/onrazpenqdisij3/before_command.png?raw=1" alt="home directory before running the command above" width="100%"/>
+		
+		<br />
+		<br />
 
-	3. Ο φάκελος test που περιέχει όλα τα αρχεία txt που θέλουμε.
-   <img src="https://www.dropbox.com/s/b1o5jwq8f1lzymu/new_folder_after_command.png?raw=1" alt="the newly created folder and what it contains" width="100%"/>
+			2. Το Home directory μας αφότου τρέξουμε το command.
+		<img src="https://www.dropbox.com/s/aq437j9xg03x5ua/home_after_command.png?raw=1" alt="home directory after running the command above " width="100%"/>
+
+		<br />
+		<br />
+		
+			3. Ο φάκελος test που περιέχει όλα τα αρχεία txt που θέλουμε.
+		<img src="https://www.dropbox.com/s/b1o5jwq8f1lzymu/new_folder_after_command.png?raw=1" alt="the newly created folder and what it contains" width="100%"/>
 
 </details>
 
+<br />
+
+Χωρίς να μετακινηθούμε από το **Home** directory και με μία μόνο εντολή να αντιγράψουμε τα *αρχεία* (xyz, xzy, yxz) στον *φάκελο* (other). Επίσης πρέπει να παρέχετε μόνο *δύο ορίσματα* και δεν επιτρέπεται η χρήση των χαρακτήρων `{` και `}`. Για να βρείτε τους χαρακτήρες (x, y, z) πρέπει να κάνετε τις εξής πράξεις (x = E mod 3), (y = (E+1) mod 3) και (z = (E+2) mod 3), όπου **Ε** το τελευταίο ψηφίο του **ΑΜ** σας.
+
+<br />
+**Λύση**
+
+Έστω ότι Ε = 5
+<br />
+x = 5 mod 3. Άρα x = 2.
+
+y = 6 mod 3. Άρα y = 0.
+
+z = 7 mod 3. Άρα z = 1.
+<br />
+Άρα πρέπει να αντιγράψουμε μόνο τα αρχεία: **201**, **210** και **021**
+```bash
+cp test/[02]?[01].txt other/
+```
 
 <br />
 
- 2. Χωρίς να μετακινηθούμε από το **Home** directory και με μία μόνο εντολή να αντιγράψουμε τα *αρχεία* (xyz, xzy, yxz) στον *φάκελο* (other). Επίσης πρέπει να παρέχετε μόνο *δύο ορίσματα* και δεν επιτρέπεται η χρήση των χαρακτήρων `{` και `}`. Για να βρείτε τους χαρακτήρες (x, y, z) πρέπει να κάνετε τις εξής πράξεις (x = E mod 3), (y = (E+1) mod 3) και (z = (E+2) mod 3), όπου **Ε** το τελευταίο ψηφίο του **ΑΜ** σας.
-	<br />
-	**Λύση**
-	
-	Έστω ότι Ε = 5
-	<br />
-	x = 5 mod 3 = 2
-	y = 6 mod 3 = 0
-	z = 7 mod 3 = 1
-	<br />
-	Άρα πρέπει να αντιγράψουμε μόνο τα αρχεία: **201**, **210** και **021**
-	```bash
-	cp test/[02]?[01].txt other/
-	```
-	
-	<br />
-	
-	**Επεξήγηση**
-	
-	Πρέπει να αντιγράψουμε τα αρχεία 201, 210 και 021. Παρατηρούμε ότι όλα τα αρχεία ξεκινάνε είτε με το ψηφίο *2* είτε με το ψηφίο *0*. Γι αυτό λέμε *[02]* δηλαδή περιλαμβάνουμε ότι αρχίζει είτε με *2* είτε με *0*. Μετά έχουμε βάλει τον χαρακτήρα *?* το οποίο σημαίνει ότι εκεί μπορεί να υπάρχει οποιοσδήποτε χαρακτήρας. Όντως αμα παρατηρήσουμε τα αρχεία που πρέπει να αντιγράψουμε, σαν δεύτερο ψηφίο υπάρχουν όλοι οι πιθανοί αριθμοί (0, 1, 2) άρα δεν μας νοιάζει να έχουμε κάποιο συγκεκριμένο ψηφίο σε αυτή την θέση. Τέλος βάλαμε *[0-1]* (θα μπορούσαμε να βάλουμε και [01] γιατί προφανώς δεν έχει διαφορά) και αυτό γιατί πολύ απλά το τελικό ψηφίο και στα τρία αρχεία είτε είναι *0* είτε είναι *1*.
-	<br />
-	<details style="cursor: pointer">
-		 <summary>Screenshots Here</summary>
-		 <br>
-		1. Το other directory πριν να τρέξουμε το command.
-		 <img src="https://www.dropbox.com/s/pjx5447w7yn9vm4/before_cp.png?raw=1" alt="other directory before executing the above command" width="100%"/>
+**Επεξήγηση**
 
-		2. Το command που πρέπει να τρέξουμε.
-	   <img src="https://www.dropbox.com/s/nhfquhzl43it3q3/cp_command.png?raw=1" alt="executing the above command " width="100%"/>
-
-		3.Ο φάκελος other που περιέχει όλα τα αρχεία txt που έπρεπε να αντιγράψουμε.
-	   <img src="https://www.dropbox.com/s/8fbf7jgknag7d6o/after_cp.png?raw=1" alt="other directory after executing the above command" width="100%"/>
-
-	</details>
-	
+Πρέπει να αντιγράψουμε τα αρχεία 201, 210 και 021. Παρατηρούμε ότι όλα τα αρχεία ξεκινάνε είτε με το ψηφίο *2* είτε με το ψηφίο *0*. Γι αυτό λέμε *[02]* δηλαδή περιλαμβάνουμε ότι αρχίζει είτε με *2* είτε με *0*. Μετά έχουμε βάλει τον χαρακτήρα *?* το οποίο σημαίνει ότι εκεί μπορεί να υπάρχει οποιοσδήποτε χαρακτήρας. Όντως αμα παρατηρήσουμε τα αρχεία που πρέπει να αντιγράψουμε, σαν δεύτερο ψηφίο υπάρχουν όλοι οι πιθανοί αριθμοί (0, 1, 2) άρα δεν μας νοιάζει να έχουμε κάποιο συγκεκριμένο ψηφίο σε αυτή την θέση. Τέλος βάλαμε *[01]* και αυτό γιατί πολύ απλά το τελικό ψηφίο και στα τρία αρχεία είτε είναι *0* είτε είναι *1*.
 <br />
-
-
- 3. Υπολογίστε τα xyz κάνοντας τις εξείς πράξεις (x = Γ mod 8), (y = Δ mod 8) και (z = Ε mod 8), όπου Γ Δ Ε τα τρία τελευταία ψηφία του ΑΜ σας. Στην συνέχεια χωρίς να μετακινηθήτε από το **Home** directory εκτελέστε την εντολή `chmod xyz ~/test/012.txt` (χωρίς όμως να χρησιμοποιήσετε αριθμητικές τιμές).
-	
-	<br />
-	
-	**Λύση**
-	
-	Έστω ότι Γ = 1, Δ = 9, Ε = 5.
-	
-	<br />
-	
-	x = 1 mod 8 = 1
-	y = 9 mod 8 = 1
-	z = 5 mod 8 = 5
-	
-	<br />
-	
-	Άρα πρέπει να αλλάξουμε τα δικαιώματα του αρχείου *012* στις **115**.
-	
-	```bash
-	chmod u=x,g=x,o=rx test/012.txt
-	```
-	
-	<br />
-	
-	**Επεξήγηση**
-	
-	Εφόσον δεν πρέπει να χρησιμοποιήσουμε τις αριθμητικές τιμές για να αλλάξουμε τα δικαιώματα του αρχείου *012* πρέπει να χρησιμοποιήσουμε τους χαρακτήρες `r w x`. Γνωρίζουμε ότι `r = 4`, `w = 2` και `x = 1`. Οπότε το μόνο που μένει είναι να βρούμε τον σωστό συνδυασμό χαρακτήρων ώστε να φτιάξουμε τα δικαιώματα του αρχείου.
-	Εφόσον πρέπει να έχουμε `115` σημαίνει ότι έχουμε `u=1,g=1,o=5` άρα με χαρακτήρες έχουμε: `u=x,g=x,o=rx`. Το `u` και το `g` νομίζω είναι πολύ απλά να τα καταλάβουμε, το `o` όμως είναι συνδυασμός του `r` και του `x` αυτό γιατί `r = 4`  και `x = 1` οπότε για να φτιάξουμε το `5` χρησιμοποιούμε και τα δύο. 
-	
-	<br />
-	<details style="cursor: pointer">
-		 <summary>Screenshots Here</summary>
-		 <br>
-		1. Τα δικαιώματα του αρχείου 012.txt πριν να τρέξουμε το command.
-		 <img src="https://www.dropbox.com/s/g1m1a2k1hyier37/before_chmod.png?raw=1" alt="permissions of 012.txt before executing the above command" width="100%"/>
-
-		2. Το command που πρέπει να τρέξουμε.
-	   <img src="https://www.dropbox.com/s/aosl43op9qr33x4/chmod_command.png?raw=1" alt="executing the above command " width="100%"/>
-
-		3. Τα δικαιώματα του αρχείου 012.txt μετά την εκτέλεση του command (και εμφάνιση του με αριθμούς αν σας μπερδεύουν οι χαρακτήρες).
-	   <img src="https://www.dropbox.com/s/rlhzs922q5wgp2d/after_chmod_chars.png?raw=1" alt="permissions of 012.txt after executing the above command" width="100%"/>
+<details style="cursor: pointer">
+		<summary>&#10148; Screenshots Here</summary>
 		<br>
-	 	<img src="https://www.dropbox.com/s/3rdbfw5f9mm5vfy/after_chmod_nums.png?raw=1" alt="permissions of 012.txt after executing the above command in numbers" width="100%"/>
-	</details>
+	1. Το other directory πριν να τρέξουμε το command.
+		<img src="https://www.dropbox.com/s/pjx5447w7yn9vm4/before_cp.png?raw=1" alt="other directory before executing the above command" width="100%"/>
+
+	2. Το command που πρέπει να τρέξουμε.
+		<img src="https://www.dropbox.com/s/nhfquhzl43it3q3/cp_command.png?raw=1" alt="executing the above command " width="100%"/>
+
+	3.Ο φάκελος other που περιέχει όλα τα αρχεία txt που έπρεπε να αντιγράψουμε.
+		<img src="https://www.dropbox.com/s/8fbf7jgknag7d6o/after_cp.png?raw=1" alt="other directory after executing the above command" width="100%"/>
+
+</details>
 	
-	<br />
+<br />
+
+
+Υπολογίστε τα xyz κάνοντας τις εξής πράξεις (x = Γ mod 8), (y = Δ mod 8) και (z = Ε mod 8), όπου Γ Δ Ε τα τρία τελευταία ψηφία του ΑΜ σας. Στην συνέχεια χωρίς να μετακινηθήτε από το **Home** directory εκτελέστε την εντολή `chmod xyz ~/test/012.txt` (χωρίς όμως να χρησιμοποιήσετε αριθμητικές τιμές).
+	
+<br />
+
+**Λύση**
+
+Έστω ότι 
+
+Γ = 1.
+
+Δ = 9.
+
+Ε = 5.
+
+<br />
+
+Τότε θα έχουμε:
+
+x = 1 mod 8. Άρα x = 1
+
+y = 9 mod 8. Άρα y = 1
+
+z = 5 mod 8. Άρα z = 5
+
+<br />
+
+Άρα πρέπει να αλλάξουμε τα δικαιώματα του αρχείου *012* σε **115**.
+
+```bash
+chmod u=x,g=x,o=rx test/012.txt
+```
+
+<br />
+
+**Επεξήγηση**
+
+Εφόσον δεν πρέπει να χρησιμοποιήσουμε τις αριθμητικές τιμές για να αλλάξουμε τα δικαιώματα του αρχείου *012* πρέπει να χρησιμοποιήσουμε τους χαρακτήρες `r w x`. Γνωρίζουμε ότι `r = 4`, `w = 2` και `x = 1`. Οπότε το μόνο που μένει είναι να βρούμε τον σωστό συνδυασμό χαρακτήρων ώστε να φτιάξουμε τα δικαιώματα του αρχείου.
+Εφόσον πρέπει να έχουμε `115` σημαίνει ότι έχουμε `u=1,g=1,o=5` άρα με χαρακτήρες έχουμε: `u=x,g=x,o=rx`. Το `u` και το `g` νομίζω είναι πολύ απλά να τα καταλάβουμε, το `o` όμως είναι συνδυασμός του `r` και του `x` αυτό γιατί `r = 4`  και `x = 1` οπότε για να φτιάξουμε το `5` χρησιμοποιούμε και τα δύο. 
+
+<br />
+<details style="cursor: pointer">
+		<summary>&#10148; Screenshots Here</summary>
+		<br>
+	1. Τα δικαιώματα του αρχείου 012.txt πριν να τρέξουμε το command.
+		<img src="https://www.dropbox.com/s/g1m1a2k1hyier37/before_chmod.png?raw=1" alt="permissions of 012.txt before executing the above command" width="100%"/>
+
+	2. Το command που πρέπει να τρέξουμε.
+		<img src="https://www.dropbox.com/s/aosl43op9qr33x4/chmod_command.png?raw=1" alt="executing the above command " width="100%"/>
+
+	3. Τα δικαιώματα του αρχείου 012.txt μετά την εκτέλεση του command (και εμφάνιση του με αριθμούς αν σας μπερδεύουν οι χαρακτήρες).
+		<img src="https://www.dropbox.com/s/rlhzs922q5wgp2d/after_chmod_chars.png?raw=1" alt="permissions of 012.txt after executing the above command" width="100%"/>
+	<br>
+	<img src="https://www.dropbox.com/s/3rdbfw5f9mm5vfy/after_chmod_nums.png?raw=1" alt="permissions of 012.txt after executing the above command in numbers" width="100%"/>
+</details>
+
+<br />
