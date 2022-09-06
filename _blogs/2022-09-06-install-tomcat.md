@@ -32,21 +32,21 @@ java --version
 
 * **Debian** based distributions
 
-  ```sh
+  ```bash
   sudo apt install default-jdk
   ```
 
 * **Fedora**
 
   Μπορείτε να κατεβάσετε οποιαδήποτε έκδοση της Java, απλά εγώ θα αφήσω εδώ το πακέτο με την τελευταία έκδοση της.
-  ```sh
+  ```bash
   sudo dnf install java-latest-openjdk 
   ```
 
 * **Arch**
   
   Για την τελευταία έκδοση της Java.
-  ```sh
+  ```bash
   sudo pacman -S jre-openjdk jdk-openjdk
   ```
 
@@ -76,7 +76,7 @@ java --version
 
 Το αρχείο **.bashrc** είναι ένα συγκεκριμένο αρχείο για το shell enviroment μας και βρίσκεται στο `~/.bashrc`. Αν δεν υπάρχει πρέπει απλός να το δημιουργήσουμε με το εξής command:
 
-  ```sh
+  ```bash
   cd ~ && touch .bashrc
   ```
 
@@ -96,7 +96,7 @@ java --version
 
 Αφότου το ανοίξουμε πάμε σε μία κενή γραμμή και γράφουμε το εξής:
 
-```sh
+```bash
 export CATALINA_HOME="/home/vm/Downloads/apache-tomcat-8.5.82"
 ```
 
@@ -106,7 +106,7 @@ export CATALINA_HOME="/home/vm/Downloads/apache-tomcat-8.5.82"
 
 Τώρα είμαστε έτοιμοι να τρέξουμε τον Tomcat. Για να το κάνουμε αυτό πάμε στον φάκελο όπου τον κάναμε unzip και μετά πάμε στον φάκελο **bin**. Το μόνο που μένει είναι να τρέξουμε το script που παρέχουν με όνομα `startup.sh` και ο Tomcat θα αρχίσει.
 
-```sh
+```bash
 sudo ./startup.sh
 ```
 
